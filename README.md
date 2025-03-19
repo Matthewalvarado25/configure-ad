@@ -22,10 +22,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Step 1: Deploy an Azure Virtual Machine for Active Directory
+- Step 2: Install Active Directory Domain Services (AD DS)
+- Step 3: Configure Networking for AD Connectivity
+- Step 4: Join Additional VMs to the Active Directory Domain
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -33,7 +33,13 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Log in to Azure Portal → Navigate to Virtual Machines → Click Create.
+Choose Windows Server 2019/2022 as the OS.
+Select an appropriate VM size (e.g., Standard_B2ms with 2 vCPUs, 8GB RAM).
+Configure networking:
+Assign a static private IP (needed for domain controller stability).
+Allow RDP (3389) for remote access.
+Deploy the VM and connect using RDP.
 </p>
 <br />
 
