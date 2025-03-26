@@ -298,8 +298,26 @@ Run the script and observe the accounts being created
 
 
 Check to see in Active Directory that the users have been created 
+- open "Active Directory Users and Computers" application
+- Find the "_EMPLOYEES" folder
+- Right click folder and select "Refresh" to see if the users have been created
 
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+</p>
+<br />  
 
+Attempt to log into client-1 with one of the users
+- Choose any new created user from the Active Directory 
+- To make sure the script works, you can try to log in to Client-1 VM as the user you picked
+- The password will be the same for all users
+  
 
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+</p>
+<br />  
 
 
