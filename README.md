@@ -31,7 +31,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Deployment and Configuration Steps</h2>
 
-Create the Domain Controller VM (Windows Server 2022) name it “Dc-1”:
+- Create a resource group and virtual network
+- Create the Domain Controller VM (Windows Server 2022) name it “Dc-1”:
 <p>
 
 ![image](https://github.com/user-attachments/assets/386c6b2d-4446-49cf-887b-05dcdcbcad66)
@@ -60,6 +61,10 @@ Now that you created the domain controller (Dc-1), set the controllers NIC Priva
 </p>
 <p>
 Firstly, let's use Remote Desktop to view our domain controller and turn off the firewall because we need Client-1 to be able to access the DC-1 (domain controller) DNS server. 
+- Within the DC-1 VM, navigate to "Windows Defender Firewall with Advanced Security"
+- Click "Windows Defender Firewall Properties"
+- Turn off "Firewall State" in "Domain Profile", "Private Profile", and "Public Profile" tabs
+- Click "Apply" and "Ok"
 
 ![image](https://github.com/user-attachments/assets/48c2ff2a-15cd-47fa-8354-35142926562e)
 
@@ -84,7 +89,10 @@ Now, we can log in and Remote Desktop into Client-1 and open PowerShell from the
 
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  
+Install Active Directory
+
+  
 </p>
 <br />
 
