@@ -227,7 +227,7 @@ Join client-1 to your domain
 </p>
 <br />  
 
-Setup remote desktop for non- administartive users
+Setup Remote Desktop for non-administrative users on Client-1
 - Log into Client-1 VM as "Jane Doe" (mydomain.com\jane_admin)
 - Navigate to "Settings" -> "System" -> "Remote Desktop"
 - Click on "Select users that can remotely access this PC" at the bottom of window
