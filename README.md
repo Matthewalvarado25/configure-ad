@@ -52,7 +52,14 @@ Next create the second VM on (Windows 10) name it “Client-1”. Use the same R
 </p>
 <br />
 
-Now that you created the domain controller (Dc-1), set the controllers NIC Private IP address to static. Go to Dc-1's network settings --> select networking --> click the hyperlink under "network interface/ IP Configuration" --> "ipconfig1" --> change the IP address from dynamic to static (this ensures DC-1's IP address will not change) --> check the NIC settings to make sure both VMs are on the same "Vnet". This will ensure both VMs can communicate & connect with each other later in this lab.
+Set the controllers NIC Private IP address to static.
+- Navigate to your DC-1 VM in Azure
+- Navigate to "Network Settings"
+- Click on "Network Interface / IP configuration" box
+- Click on "ipconfig1"
+- Under "Allocation", select "Static"
+- Click "Save" 
+ (this ensures DC-1's IP address will not change) --> check the NIC settings to make sure both VMs are on the same "Vnet". This will ensure both VMs can communicate & connect with each other later in this lab.
 
 <p>
   
@@ -60,25 +67,38 @@ Now that you created the domain controller (Dc-1), set the controllers NIC Priva
 
 </p>
 <p>
-Firstly, let's use Remote Desktop to view our domain controller and turn off the firewall because we need Client-1 to be able to access the DC-1 (domain controller) DNS server. 
+
+Connect to the Domain Controller with Remote Desktop
+
+- Retrieve and copy public IP address of DC-1 VM
+- Paste public IP address into "Computer" section of Remote Desktop and connect to the VM
+
+Disable the firewalls in the Domain controller
 - Within the DC-1 VM, navigate to "Windows Defender Firewall with Advanced Security"
 - Click "Windows Defender Firewall Properties"
 - Turn off "Firewall State" in "Domain Profile", "Private Profile", and "Public Profile" tabs
 - Click "Apply" and "Ok"
-
+- We are using Remote Desktop to view our domain controller and turn off the firewall because we need Client-1 to be able to access the DC-1 (domain controller) DNS server. 
 ![image](https://github.com/user-attachments/assets/48c2ff2a-15cd-47fa-8354-35142926562e)
 
 
 </p>
 <br />
 
-After doing this, we need to change the DNS settings of Client-1 within Azure so that the virtual machine relies on the domain controller for DNS. In Microsoft Azure, we need to locate the private IP address of Dc-1, and then we go to the custom DNS server setting for Client-1 and change it to the private IP address we obtained which was 10.0.0.4 and click save. You may need to restart the Client-1 VM to make sure the DNS settings are active. 
+Connect Client VM to Domain Controller VM
 
+- Retrieve Dc-1 VM private IP address and copy it
+- Navigate to Client-1 VM -> Network Settings -> click on "Network Interface / IP configuration" box
+- On the left side of window, click on "DNS servers"
+- Under "DNS servers", select the "Custom" option and paste the DC-1 private IP address
 <p>
   
 ![image](https://github.com/user-attachments/assets/83331ce5-bf85-4d53-8fd8-dd02f00808c2)
 
-
+- Click "Save"
+- Navigate to "Virtual Machines" in Azure
+- Select "Client-1" box
+- Click "Restart", (we are restarting the VM to make sure the changes have been processed). 
 
 
 Now, we can log in and Remote Desktop into Client-1 and open PowerShell from the Start menu. From there, we can ping the domain controller’s private IP and see if a connection is able to be established. Ping the Domain Controller by typing "ping(private IP address)" (Example: ping 10.0.0.4). After pinging Dc-1, if we see that the packets were able to be sent and received, then we can determine that a stable connection was established. We can type ipconfig /all in the command window, and it should show Dc-1’s private IP address under DNS server. 
@@ -245,3 +265,7 @@ Setup Remote Desktop for non-administrative users on Client-1
 
 </p>
 <br />
+
+Create additional users and attempt to log into client-1 with one of the users
+
+
