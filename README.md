@@ -101,7 +101,15 @@ Connect Client VM to Domain Controller VM
 - Click "Restart", (we are restarting the VM to make sure the changes have been processed). 
 
 
-Now, we can log in and Remote Desktop into Client-1 and open PowerShell from the Start menu. From there, we can ping the domain controller’s private IP and see if a connection is able to be established. Ping the Domain Controller by typing "ping(private IP address)" (Example: ping 10.0.0.4). After pinging Dc-1, if we see that the packets were able to be sent and received, then we can determine that a stable connection was established. We can type ipconfig /all in the command window, and it should show Dc-1’s private IP address under DNS server. 
+Ensure Connectivity Between Domain Controller and Client
+
+Login to the client-1 VM by copying the public IP address
+Paste the public IP address into "Computer" section of Remote Desktop and connect to the VM
+- Now, we can log in and Remote Desktop into Client-1 and open PowerShell from the Start menu.
+- Ping the Domain Controller by typing "ping and entering the (private IP address)" (Example: ping 10.0.0.4)
+- Oberse and make sure it works
+  
+ After pinging Dc-1, if we see that the packets were able to be sent and received, then we can determine that a stable connection was established. We can type ipconfig /all in the command window, and it should show Dc-1’s private IP address under DNS server. 
 
 ![image](https://github.com/user-attachments/assets/ea32cd17-b1a9-4aeb-9f5f-530ca2ac78e1)
 
@@ -267,5 +275,31 @@ Setup Remote Desktop for non-administrative users on Client-1
 <br />
 
 Create additional users and attempt to log into client-1 with one of the users
+- Login to Dc-1 as jane_admin via Remote Desktop 
+- Open PowerShell_ise as an administrator.
+- Create a new file, if one is not already displayed
+- Copy and paste the contents of this script into PowerShell ISE file, then save it
+  
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+</p>
+<br />  
+
+
+
+Run the script and observe the accounts being created
+
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+</p>
+<br />  
+
+
+Check to see in Active Directory that the users have been created 
+
+
+
 
 
