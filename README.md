@@ -53,8 +53,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <br />
 
 Set the controllers NIC Private IP address to static.
-- Navigate to your DC-1 VM in Azure
-- Navigate to "Network Settings"
+- Go to your Dc-1 VM in Azure
+- Go to "Network Settings"
 - Click on "Network Interface / IP configuration" box
 - Click on "ipconfig1"
 - Under "Allocation", select "Static"
@@ -118,18 +118,20 @@ Paste the public IP address into "Computer" section of Remote Desktop and connec
 
 <h2>Install Active Directory</h2>  
 
-- Connect to your DC-1 VM via Remote Desktop
-- Open Server Manager Application
+- Connect to your Dc-1 VM through Remote Desktop
+- Open Server Manager App
 - Click "Add Roles and Features"
 - Click "Next" until you reach "Server Roles"
 - Select "Active Directory Domain Services" and click "Add Features"
 - Click "Next" until you reach "Confirmation"
-- Check box that says "Restart the destination server automatically if required"
+- Check the box that says "Restart the destination server automatically if required"
 - Click "Install" to complete installation
 
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+  
+![image](https://github.com/user-attachments/assets/06e3f756-18fe-469b-a7de-1512b9a06ad4)
+
 </p>
 <p>
 
@@ -139,33 +141,41 @@ Paste the public IP address into "Computer" section of Remote Desktop and connec
 </p>
 <br />
 
-
-- Now in the Server Manager Dashboard, click on the flag at top right and click "Promote this server to a domain controller"
-- Select "Add a new forest" option
+Promote to Domain Controller
+- Now in the Server Manager, click on the flag at top right and click "Promote this server to a domain controller"
+- Select "Add a new forest" 
 - Set "Root domain name:" to "mydomain.com"
-<p>
-
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-</p>
-<br />
-
-- Under "DNS options", uncheck "Create DNS delegation"
 - Complete forest installation and your VM should automatically restart once installation is finished
-- Log back into DC-1 VM as a domain user by typing "mydomain.com(your username)" as your username (Example: mydomain.com\labuser)
+<p>
 
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+![image](https://github.com/user-attachments/assets/fbfa5eb9-61ab-460c-81a9-b2f0df95239c)
+
 </p>
 <p>
 </p>
 <br />
+
+- Log back into Dc-1 virtual machine as a domain user by typing "mydomain.com\(username)" as your username Ex: mydomain.com\labuser)
+
+
+![image](https://github.com/user-attachments/assets/84f34088-7e18-4b7f-8551-120277a04e9c)
+
+</p>
+<p>
+</p>
+<br />
+
 
  Create a Domain Admin User inside of the domain
-- Inside the  DC-1 VM, open Active Directory Users and Computers application
-- Right click "mydomain.com" on the right side of window
+- Inside the Dc-1 virtual machine, click the start menu
+- Click Windows Administrative Tools
+- Click Active Directory Users and Computers application
+- Right click "mydomain.com" on the left side of window
 
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+
+![image](https://github.com/user-attachments/assets/ce4ec7e8-1d19-44bc-adde-5142879df3f3)
+
 </p>
 <p>
 </p>
@@ -175,41 +185,46 @@ Paste the public IP address into "Computer" section of Remote Desktop and connec
 - Fill in the name as "_EMPLOYEES" and click "Ok"
 - Create another organizational unit
 - Fill in the name as "_ADMINS"
+
+![image](https://github.com/user-attachments/assets/deb16e78-8079-4963-b5d1-1699fbe15292)
+
+
 - Click on the "_ADMINS" folder
 - Inside the empty field on the right, right click -> click "New" -> then click "User"
+- Fill out first and last name, and username "jane_admin" for a new user named "Jane Doe"
+  
+![image](https://github.com/user-attachments/assets/c644651a-9e92-4d5e-b604-dae52a0c6992)
 
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 </p>
 <br />
 
-- Fill out fields for a new user named "Jane Doe" with username "jane_admin"
 
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 </p>
 <p>
 </p>
 <br />
 
-- Proceed and finish user creation (NOTE: Feel free to uncheck "User must change password at next logon" box for your convenience)
-- Next we will add jane_admin to the built-in "Domain Admins" Security Group
+- Next we will add jane_admin to the "Domain Admins" Security Group
 - Right click on "Jane Doe" and click "Properties"
 - Navigate to "Member of" tab -> click "Add"
 - Type "Domain Admins" in the empty field
-- Click "Check Names" to confirm you found the correct object name, click "Ok", then click "Apply"
+- Click "Check Names" to verify you found the correct group name, click "Ok", then click "Apply"
 
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+![image](https://github.com/user-attachments/assets/f8d46948-75c2-4a52-b3a7-9397b331dcbb)
+
 </p>
 <p>
 </p>
 <br />
 
-- Close or logout of the DC-1 VM connection
-- Log back into DC-1 VM as "Jane Doe" (mydomain.com\jane_admin)
-- From now on user "jane_admin" will be used as the admin account
+- Logout of the Dc-1 VM connection
+- Log back into Dc-1 VM as "Jane Doe" username: mydomain.com\jane_admin
+- Use jane_admin as your admin account from now on
   
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 </p>
 <p>
 </p>
@@ -220,7 +235,8 @@ Join client-1 to your domain
 - Within the Client-1 VM, right click Windows start button -> then click "System"
 - Click "Rename this PC (advanced)" on the right side of window
 
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+![image](https://github.com/user-attachments/assets/907f1962-3a7e-4f19-98f7-73d8c9700a68)
+
 </p>
 <p>
 </p>
@@ -229,7 +245,8 @@ Join client-1 to your domain
 - Under "Computer Name" tab, click "Change
 - Check "Domain" bubble, type "mydomain.com" in the field, then click "Ok"
   
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+![image](https://github.com/user-attachments/assets/072469d8-6c81-42fc-99b9-67d558561f48)
+
 </p>
 <p>
 </p>
@@ -239,7 +256,8 @@ Join client-1 to your domain
 - Fill in the username and password with "Jane Doe" information (Username: mydomain.com\jane_admin)
 - Click "Ok" and if done correctly, you will see the following window pop up
 
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+![image](https://github.com/user-attachments/assets/a4b058aa-c98d-4184-8473-bfcc230d5994)
+
 </p>
 <p>
 </p>
