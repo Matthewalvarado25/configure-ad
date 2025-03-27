@@ -297,12 +297,14 @@ Setup Remote Desktop for non-administrative users on Client-1
 <br />
 
 Create additional users and attempt to log into client-1 with one of the users
-- Login to Dc-1 as jane_admin via Remote Desktop 
+- Login to Dc-1 as jane_admin using Remote Desktop 
 - Open PowerShell_ise as an administrator.
-- Create a new file, if one is not already displayed
-- Copy and paste the contents of this script into PowerShell ISE file, then save it
+- Create a new file and save the file to the desktop name it (Create-users)
+- Copy and paste the contents of this [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)  into PowerShell ISE
+- Click the green play button at the top to run the script
   
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+![image](https://github.com/user-attachments/assets/ff85286b-618c-4290-9174-cc42e397d65b)
+
 </p>
 <p>
 </p>
@@ -312,7 +314,8 @@ Create additional users and attempt to log into client-1 with one of the users
 
 Run the script and observe the accounts being created
 
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+![image](https://github.com/user-attachments/assets/1a3d4cc5-1f11-4d67-acf8-2557ce85df36)
+
 </p>
 <p>
 </p>
