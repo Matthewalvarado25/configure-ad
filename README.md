@@ -327,7 +327,9 @@ Check to see in Active Directory that the users have been created
 - Find the "_EMPLOYEES" folder
 - Right click folder and select "Refresh" to see if the users have been created
 
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+![image](https://github.com/user-attachments/assets/db6b296e-7cfb-4dec-bda0-ea383ce6065e)
+
+
 </p>
 <p>
 </p>
@@ -336,10 +338,13 @@ Check to see in Active Directory that the users have been created
 Attempt to log into client-1 with one of the users
 - Choose any new created user from the Active Directory 
 - To make sure the script works, you can try to log in to Client-1 VM as the user you picked
-- The password will be the same for all users
+- In this example the user that was chosen was "buw.gig" , the login username will be "mydomain.com\buw.gig"
+- The password will be the same for all users, and can be found at the top of the script
+  
   
 
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+![image](https://github.com/user-attachments/assets/cf88667d-12ab-477b-b6b4-0dd6f11f1a6b)
+
 </p>
 <p>
 </p>
