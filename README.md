@@ -243,7 +243,7 @@ Join client-1 to your domain
 <br />
 
 - Under "Computer Name" tab, click "Change
-- Check "Domain" bubble, type "mydomain.com" in the field, then click "Ok"
+- Check the cirlce before "Domain" , type "mydomain.com" in the text box, then click "Ok"
   
 ![image](https://github.com/user-attachments/assets/072469d8-6c81-42fc-99b9-67d558561f48)
 
@@ -254,7 +254,7 @@ Join client-1 to your domain
 
 - A "Windows Security" window should pop up
 - Fill in the username and password with "Jane Doe" information (Username: mydomain.com\jane_admin)
-- Click "Ok" and if done correctly, you will see the following window pop up
+- Click "Ok" and you will see the following window pop up
 
 ![image](https://github.com/user-attachments/assets/eefe9e79-8642-40f3-9252-36b61231c75b)
 
@@ -264,15 +264,17 @@ Join client-1 to your domain
 </p>
 <br />
 
-- Click "Ok" and your VM will restart
-- Within DC-1 VM, open "Active Directory Users and Computers" application
-- Expand "mydomain.com" -> then click on "Computers" to verify if Client-1 is there
+- Click "Ok" and your virtual machine will restart
+- In the Dc-1 VM, open "Active Directory Users and Computers" app
+- Extend "mydomain.com" -> then click on "Computers" to confirm that Client-1 is inside
 
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 </p>
 <p>
 </p>
 <br />  
+
+
 
 Setup Remote Desktop for non-administrative users on Client-1
 - Log into Client-1 VM as "Jane Doe" (mydomain.com\jane_admin)
@@ -281,9 +283,10 @@ Setup Remote Desktop for non-administrative users on Client-1
 - Click "Add"
 - Type "Domain Users" in empty field
 - Click "Check Names" to confirm you found the correct object name and click "Ok"
-- Now all normal users within the domain can log into Client-1
+- You can now log into Client-1 as a normal, non-administrative user now.
 
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+![image](https://github.com/user-attachments/assets/b7ea8256-06e9-4fb2-9abc-f3aa3acef5bd)
+
 </p>
 <p>
 </p>
