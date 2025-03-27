@@ -256,7 +256,8 @@ Join client-1 to your domain
 - Fill in the username and password with "Jane Doe" information (Username: mydomain.com\jane_admin)
 - Click "Ok" and if done correctly, you will see the following window pop up
 
-![image](https://github.com/user-attachments/assets/a4b058aa-c98d-4184-8473-bfcc230d5994)
+![image](https://github.com/user-attachments/assets/eefe9e79-8642-40f3-9252-36b61231c75b)
+
 
 </p>
 <p>
