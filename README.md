@@ -27,7 +27,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 -  Install Active Directory
 -  Join Client-1 to your domain 
 -  Setup Remote Desktop for non-administrative users on Client-1
--  create additional users and attempt to log into client-1 with one of the users
+-  Create additional users and attempt to log into client-1 with one of the users
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -44,7 +44,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 <p>
 
-Next create the second VM on (Windows 10) name it “Client-1”. Use the same Resource Group and Vnet that was created in previous step:
+- Next create the second VM on (Windows 10) name it “Client-1”. Use the same Resource Group and Vnet that was created in previous step:
 
 ![image](https://github.com/user-attachments/assets/1e9bb43b-13a4-43b9-8542-9ab359531e23)
 
