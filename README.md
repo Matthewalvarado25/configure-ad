@@ -350,4 +350,9 @@ Attempt to log into client-1 with one of the users
 </p>
 <br />  
 
-I hope this tutorial helped you learn a little bit about network security protocols and observe traffic between virtual machines. 
+![image](https://github.com/user-attachments/assets/3f0ceadd-49da-4f60-b6bb-1c8b5eafd03b)
+
+
+
+
+Congrats on completing the assignment.
