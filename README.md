@@ -53,13 +53,13 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <br />
 
 Set the controllers NIC Private IP address to static.
-- Go to your Dc-1 VM in Azure
+- Go to your Dc-1 virtual machine in Azure
 - Go to "Network Settings"
 - Click on "Network Interface / IP configuration" box
 - Click on "ipconfig1"
 - Under "Allocation", select "Static"
 - Click "Save" 
- (this ensures DC-1's IP address will not change) --> check the NIC settings to make sure both VMs are on the same "Vnet". This will ensure both VMs can communicate & connect with each other later in this lab.
+ (this will make sure Dc-1's IP address will not change) --> check the NIC settings to make sure both VMs are on the same "Vnet". This will ensure both virtual machines can communicate & connect with each other later in this lab.
 
 <p>
   
