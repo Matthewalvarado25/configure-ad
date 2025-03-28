@@ -355,4 +355,4 @@ Attempt to log into client-1 with one of the users
 
 
 
-Congrats on completing the assignment.
+Congrats on completing the assignment. Now that we're done, Don't forget to clean up your azure enviroment. Close your Remote Desktop connection, delete the Resource Group(s) created at the beginning of this tutorial, and verify Resource Group deletion.
