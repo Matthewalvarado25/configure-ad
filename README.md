@@ -170,7 +170,7 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 </p>
 <br />
 
--Restart and then log back into Dc-1 as user: mydomain.com\labuser
+- Restart and then log back into Dc-1 as user: mydomain.com\labuser
 
 
 
@@ -183,10 +183,11 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 
 
  <h3>Create a Domain Admin User inside of the domain</h3> 
+ 
 - Inside the Dc-1 virtual machine, click the start menu
 - Click Windows Administrative Tools
 - Click Active Directory Users and Computers application
-- Right click "mydomain.com" on the left side of window
+- Right click, "mydomain.com" on the left side of window
 
 
 
@@ -225,9 +226,9 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 
 - Next we will add jane_admin to the "Domain Admins" Security Group
 - Right click on "Jane Doe" and click "Properties"
-- Navigate to "Member of" tab -> click "Add"
+- Browse to "Member of" tab -> click "Add"
 - Type "Domain Admins" in the empty field
-- Click "Check Names" to verify you found the correct group name, click "Ok", then click "Apply"
+- Click, "Check Names" to verify you found the correct group name, click "Ok", then click "Apply"
 
 ![image](https://github.com/user-attachments/assets/f8d46948-75c2-4a52-b3a7-9397b331dcbb)
 
@@ -247,9 +248,9 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 <br />
 
 <h3>Join client-1 to your domain</h3> 
-- Login to Client-1 VM as original local admin (in my case username = "labuser")
-- Within the Client-1 VM, right click Windows start button -> then click "System"
-- Click "Rename this PC (advanced)" on the right side of window
+- Login to Client-1 VM as the original local admin Ex- Username:"labuser"
+- In the Client-1 VM, right click Windows start button -> then click "System"
+- Click on "Rename this PC (advanced)" on the right side of window
 
 ![image](https://github.com/user-attachments/assets/907f1962-3a7e-4f19-98f7-73d8c9700a68)
 
@@ -258,8 +259,8 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 </p>
 <br />
 
-- Under "Computer Name" tab, click "Change
-- Check the cirlce before "Domain" , type "mydomain.com" in the text box, then click "Ok"
+- Under "Computer Name" tab, click Change
+- Check the cirlce infront of "Domain" , type "mydomain.com" in the text box, then click "Ok"
   
 ![image](https://github.com/user-attachments/assets/072469d8-6c81-42fc-99b9-67d558561f48)
 
@@ -268,9 +269,9 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 </p>
 <br />
 
-- A "Windows Security" window should pop up
-- Fill in the username and password with "Jane Doe" information (Username: mydomain.com\jane_admin)
-- Click "Ok" and you will see the following window pop up
+- A "Windows Security" window will show up
+- Fill in the username and password with "Jane Doe" info (Username: mydomain.com\jane_admin)
+- Press "Ok" and you will see the following window pop up
 
 ![image](https://github.com/user-attachments/assets/eefe9e79-8642-40f3-9252-36b61231c75b)
 
@@ -293,13 +294,14 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 
 
 <h3>Setup Remote Desktop for non-administrative users on Client-1</h3> 
-- Log into Client-1 VM as "Jane Doe" (mydomain.com\jane_admin)
-- Navigate to "Settings" -> "System" -> "Remote Desktop"
+
+- Log into Client-1 virtial machine as "Jane Doe" Ex: mydomain.com\jane_admin
+- Scroll to "Settings" -> "System" -> "Remote Desktop"
 - Click on "Select users that can remotely access this PC" at the bottom of window
 - Click "Add"
 - Type "Domain Users" in empty field
-- Click "Check Names" to confirm you found the correct object name and click "Ok"
-- You can now log into Client-1 as a normal, non-administrative user now.
+- Click on "Check Names" to make sure you found the right object name and click "Ok"
+- You can now log into Client-1 as a normal user
 
 ![image](https://github.com/user-attachments/assets/b7ea8256-06e9-4fb2-9abc-f3aa3acef5bd)
 
@@ -313,11 +315,12 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 <br />
 
 <h3>Create additional users and attempt to log into client-1 with one of the users</h3> 
-- Login to Dc-1 as jane_admin using Remote Desktop 
+
+- Now login to Dc-1 as jane_admin using Remote Desktop 
 - Open PowerShell_ise as an administrator.
-- Create a new file and save the file to the desktop name it (Create-users)
+- Create a new file and save the file to the desktop named Create-users1
 - Copy and paste the contents of this [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)  into PowerShell ISE
-- Click the green play button at the top to run the script
+- Click on the green play button at the top to run the script
   
 ![image](https://github.com/user-attachments/assets/ff85286b-618c-4290-9174-cc42e397d65b)
 
@@ -328,7 +331,7 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 
 
 
-Run the script and observe the accounts being created
+Run the script and see the accounts that are being created
 
 ![image](https://github.com/user-attachments/assets/1a3d4cc5-1f11-4d67-acf8-2557ce85df36)
 
@@ -339,9 +342,9 @@ Run the script and observe the accounts being created
 
 
 Check to see in Active Directory that the users have been created 
-- open "Active Directory Users and Computers" application
+- Open "Active Directory Users and Computers" application
 - Find the "_EMPLOYEES" folder
-- Right click folder and select "Refresh" to see if the users have been created
+- Right click the folder and press refresh to see if the users have been created
 
 ![image](https://github.com/user-attachments/assets/db6b296e-7cfb-4dec-bda0-ea383ce6065e)
 
@@ -352,9 +355,10 @@ Check to see in Active Directory that the users have been created
 <br />  
 
 <h3>Attempt to log into client-1 with one of the users</h3> 
-- Choose any new created user from the Active Directory 
-- To make sure the script works, you can try to log in to Client-1 VM as the user you picked
-- In this example the user that was chosen was "buw.gig" , the login username will be "mydomain.com\buw.gig"
+
+- Choose any of the new users that you created from the Active Directory 
+- To make sure the script works, you can try to log in to the Client-1 VM as the user you picked
+- In this example the user that was chosen was "buw.gig" , the login username will be mydomain.com\buw.gig
 - The password will be the same for all users, and can be found at the top of the script
   
   
@@ -371,4 +375,4 @@ Check to see in Active Directory that the users have been created
 
 
 
-Congrats on completing the assignment. Now that we're done, Don't forget to clean up your azure enviroment. Close your Remote Desktop connection, delete the Resource Group(s) created at the beginning of this tutorial, and verify Resource Group deletion.
+Congrats on completing the assignment. Hopefully you now have a better understanding about network security protocols and observe traffic between virtual machines. 
