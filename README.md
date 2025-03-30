@@ -31,7 +31,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Deployment and Configuration Steps</h2>
 
-- Create a resource group and virtual network
+ <h3>Create a resource group and virtual network</h3>
+ 
 - Create the Domain Controller VM (Windows Server 2022) name it “Dc-1”:
 <p>
 
@@ -43,8 +44,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 </p>
 <p>
-
-- Next create the second VM on (Windows 10) name it “Client-1”. Use the same Resource Group and Vnet that was created in previous step:
+  
+- Next create the second VM on (Windows 10) name it “Client-1”. Use the same Resource Group and Vnet that was created in previous step
 
 ![image](https://github.com/user-attachments/assets/1e9bb43b-13a4-43b9-8542-9ab359531e23)
 
@@ -59,9 +60,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Click on "Network Interface / IP configuration" box
 - Click on "ipconfig1"
 - Under "Allocation", select "Static"
-- Click "Save" 
- (this will make sure Dc-1's IP address will not change) --> check the NIC settings to make sure both VMs are on the same "Vnet". This will ensure both virtual machines can communicate & connect with each other later in this lab.
-
+- Click "Save", this will make sure Dc-1's IP address will not change 
 <p>
   
 ![image](https://github.com/user-attachments/assets/bc98fd32-622d-4824-80f9-9d24acf3a74c)
@@ -75,11 +74,12 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Paste public IP address into "Computer" section of Remote Desktop and connect to the VM
 
 <h3>Disable the firewalls in the Domain controller</h3>
-- Within the DC-1 VM, navigate to "Windows Defender Firewall with Advanced Security"
+
+- In the Dc-1 VM, navigate to "Windows Defender Firewall with Advanced Security"
 - Click "Windows Defender Firewall Properties"
 - Turn off "Firewall State" in "Domain Profile", "Private Profile", and "Public Profile" tabs
 - Click "Apply" and "Ok"
-- We are using Remote Desktop to view our domain controller and turn off the firewall because we need Client-1 to be able to access the DC-1 (domain controller) DNS server. 
+- We are using Remote Desktop to view our domain controller and turn off the firewall because we need Client-1 to be able to access the Dc-1 DNS server. 
 ![image](https://github.com/user-attachments/assets/48c2ff2a-15cd-47fa-8354-35142926562e)
 
 
@@ -99,16 +99,26 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Click "Save"
 - Navigate to "Virtual Machines" in Azure
 - Select "Client-1" box
-- Click "Restart", (we are restarting the VM to make sure the changes have been processed). 
+- Click "Restart", (we are restarting the VM to make sure the changes have been processed).
+  
+</p>
+<br />
 
+<h3>Connect to Client VM with Remote Desktop</h3>
+
+- Retrieve and copy public IP address of Client-1 virtual machine
+- Paste the public IP address into "Computer" field section of Remote Desktop and connect to the VM
+
+</p>
+<br />
 
 <h3>Ensure Connectivity Between Domain Controller and Client</h3>
 
 Login to the client-1 VM by copying the public IP address
-Paste the public IP address into "Computer" section of Remote Desktop and connect to the VM
+Paste the public IP address into "Computer" field section of Remote Desktop and connect to the VM
 - Now, we can log in and Remote Desktop into Client-1 and open PowerShell from the Start menu.
 - Ping the Domain Controller by typing "ping and entering the (private IP address)" (Example: ping 10.0.0.4)
-- Oberse and make sure it works
+- Observe and make sure it works
   
  After pinging Dc-1, if we see that the packets were able to be sent and received, then we can determine that a stable connection was established. We can type ipconfig /all in the command window, and it should show Dc-1’s private IP address under DNS server. 
 
