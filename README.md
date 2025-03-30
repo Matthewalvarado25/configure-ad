@@ -375,4 +375,4 @@ Check to see in Active Directory that the users have been created
 
 
 
-Congrats on completing the assignment. Hopefully you now have a better understanding about network security protocols and observe traffic between virtual machines. 
+Congrats on completing the assignment, you've successfully set up on-premises Active Directory within Azure Virtual Machines. You now have a fully functioning domain controller within Azure, and you can add more domain-joined clients and servers as needed.
