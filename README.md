@@ -52,7 +52,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 <br />
 
-Set the controllers NIC Private IP address to static.
+<h3>Set the controllers NIC Private IP address to static.</h3>
+
 - Go to your Dc-1 virtual machine in Azure
 - Go to "Network Settings"
 - Click on "Network Interface / IP configuration" box
@@ -68,12 +69,12 @@ Set the controllers NIC Private IP address to static.
 </p>
 <p>
 
-Connect to the Domain Controller with Remote Desktop
+<h3>Connect to the Domain Controller with Remote Desktop</h3>
 
 - Retrieve and copy public IP address of DC-1 VM
 - Paste public IP address into "Computer" section of Remote Desktop and connect to the VM
 
-Disable the firewalls in the Domain controller
+<h3>Disable the firewalls in the Domain controller</h3>
 - Within the DC-1 VM, navigate to "Windows Defender Firewall with Advanced Security"
 - Click "Windows Defender Firewall Properties"
 - Turn off "Firewall State" in "Domain Profile", "Private Profile", and "Public Profile" tabs
@@ -85,7 +86,7 @@ Disable the firewalls in the Domain controller
 </p>
 <br />
 
-Connect Client VM to Domain Controller VM
+<h3>Connect Client VM to Domain Controller VM</h3>
 
 - Retrieve Dc-1 VM private IP address and copy it
 - Navigate to Client-1 VM -> Network Settings -> click on "Network Interface / IP configuration" box
@@ -101,7 +102,7 @@ Connect Client VM to Domain Controller VM
 - Click "Restart", (we are restarting the VM to make sure the changes have been processed). 
 
 
-Ensure Connectivity Between Domain Controller and Client
+<h3>Ensure Connectivity Between Domain Controller and Client</h3>
 
 Login to the client-1 VM by copying the public IP address
 Paste the public IP address into "Computer" section of Remote Desktop and connect to the VM
@@ -116,7 +117,7 @@ Paste the public IP address into "Computer" section of Remote Desktop and connec
 </p>
 <p>
 
-<h2>Install Active Directory</h2>  
+<h3>Install Active Directory</h3> 
 
 - Connect to your Dc-1 VM through Remote Desktop
 - Open Server Manager App
@@ -141,7 +142,7 @@ Paste the public IP address into "Computer" section of Remote Desktop and connec
 </p>
 <br />
 
-Promote to Domain Controller
+<h3>Promote to Domain Controller</h3> 
 - Now in the Server Manager, click on the flag at top right and click "Promote this server to a domain controller"
 - Select "Add a new forest" 
 - Set "Root domain name:" to "mydomain.com"
@@ -166,7 +167,7 @@ Promote to Domain Controller
 <br />
 
 
- Create a Domain Admin User inside of the domain
+ <h3>Create a Domain Admin User inside of the domain</h3> 
 - Inside the Dc-1 virtual machine, click the start menu
 - Click Windows Administrative Tools
 - Click Active Directory Users and Computers application
@@ -230,7 +231,7 @@ Promote to Domain Controller
 </p>
 <br />
 
-Join client-1 to your domain
+<h3>Join client-1 to your domain</h3> 
 - Login to Client-1 VM as original local admin (in my case username = "labuser")
 - Within the Client-1 VM, right click Windows start button -> then click "System"
 - Click "Rename this PC (advanced)" on the right side of window
@@ -276,7 +277,7 @@ Join client-1 to your domain
 
 
 
-Setup Remote Desktop for non-administrative users on Client-1
+<h3>Setup Remote Desktop for non-administrative users on Client-1</h3> 
 - Log into Client-1 VM as "Jane Doe" (mydomain.com\jane_admin)
 - Navigate to "Settings" -> "System" -> "Remote Desktop"
 - Click on "Select users that can remotely access this PC" at the bottom of window
@@ -296,7 +297,7 @@ Setup Remote Desktop for non-administrative users on Client-1
 </p>
 <br />
 
-Create additional users and attempt to log into client-1 with one of the users
+<h3>Create additional users and attempt to log into client-1 with one of the users</h3> 
 - Login to Dc-1 as jane_admin using Remote Desktop 
 - Open PowerShell_ise as an administrator.
 - Create a new file and save the file to the desktop name it (Create-users)
@@ -335,7 +336,7 @@ Check to see in Active Directory that the users have been created
 </p>
 <br />  
 
-Attempt to log into client-1 with one of the users
+<h3>Attempt to log into client-1 with one of the users</h3> 
 - Choose any new created user from the Active Directory 
 - To make sure the script works, you can try to log in to Client-1 VM as the user you picked
 - In this example the user that was chosen was "buw.gig" , the login username will be "mydomain.com\buw.gig"
