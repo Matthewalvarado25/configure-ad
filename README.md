@@ -60,7 +60,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Click on "Network Interface / IP configuration" box
 - Click on "ipconfig1"
 - Under "Allocation", select "Static"
-- Click "Save", this will make sure Dc-1's IP address will not change 
+- Click "Save", this will make sure Dc-1's IP address will not change
+  
 <p>
   
 ![image](https://github.com/user-attachments/assets/bc98fd32-622d-4824-80f9-9d24acf3a74c)
@@ -92,14 +93,15 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Navigate to Client-1 VM -> Network Settings -> click on "Network Interface / IP configuration" box
 - On the left side of window, click on "DNS servers"
 - Under "DNS servers", select the "Custom" option and paste the DC-1 private IP address
+- Click "Save"
+- Find your way to "Virtual Machines" in Azure
+- Select "Client-1" 
+- Click "Restart", (we are restarting the VM to make sure the changes have been processed).
 <p>
   
 ![image](https://github.com/user-attachments/assets/83331ce5-bf85-4d53-8fd8-dd02f00808c2)
 
-- Click "Save"
-- Navigate to "Virtual Machines" in Azure
-- Select "Client-1" box
-- Click "Restart", (we are restarting the VM to make sure the changes have been processed).
+
   
 </p>
 <br />
@@ -135,8 +137,8 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 - Click "Next" until you reach "Server Roles"
 - Select "Active Directory Domain Services" and click "Add Features"
 - Click "Next" until you reach "Confirmation"
-- Check the box that says "Restart the destination server automatically if required"
-- Click "Install" to complete installation
+- Select the box that says "Restart the destination server automatically if required"
+- Click "Install" to conclude installation
 
 
 <p>
@@ -153,10 +155,12 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 <br />
 
 <h3>Promote to Domain Controller</h3> 
+
 - Now in the Server Manager, click on the flag at top right and click "Promote this server to a domain controller"
 - Select "Add a new forest" 
-- Set "Root domain name:" to "mydomain.com"
+- Set the Root domain name to: mydomain.com
 - Complete forest installation and your VM should automatically restart once installation is finished
+  
 <p>
 
 ![image](https://github.com/user-attachments/assets/fbfa5eb9-61ab-460c-81a9-b2f0df95239c)
@@ -166,7 +170,8 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 </p>
 <br />
 
-- Log back into Dc-1 virtual machine as a domain user by typing "mydomain.com\(username)" as your username Ex: mydomain.com\labuser)
+-Restart and then log back into Dc-1 as user: mydomain.com\labuser
+
 
 
 ![image](https://github.com/user-attachments/assets/84f34088-7e18-4b7f-8551-120277a04e9c)
