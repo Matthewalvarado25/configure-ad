@@ -52,7 +52,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 <br />
 
-<h3>Set the controllers NIC Private IP address to static.</h3>
+<h3>Set the controllers NIC Private IP address to static</h3>
 
 - Go to your Dc-1 virtual machine in Azure
 - Go to "Network Settings"
