@@ -70,8 +70,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h3>Connect to the Domain Controller with Remote Desktop</h3>
 
-- Retrieve and copy public IP address of DC-1 VM
-- Paste public IP address into "Computer" section of Remote Desktop and connect to the VM
+- Retrieve and copy public IP address of Dc-1 virtual machine
+- Paste public IP address into "Computer" field section of Remote Desktop and connect to the VM
 
 <h3>Disable the firewalls in the Domain controller</h3>
 
