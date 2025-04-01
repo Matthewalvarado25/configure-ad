@@ -71,8 +71,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h3>Connect to the Domain Controller with Remote Desktop</h3>
 
-- Retrieve and copy public IP address of Dc-1 virtual machine
-- Paste public IP address into "Computer" field section of Remote Desktop and connect to the VM
+- Find and copy the public IP address of the Dc-1 virtual machine
+- Paste the public IP address into "Computer" field section of Remote Desktop and connect to the VM
 
 <h3>Disable the firewalls in the Domain controller</h3>
 
@@ -89,10 +89,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h3>Connect Client VM to Domain Controller VM</h3>
 
-- Retrieve Dc-1 VM private IP address and copy it
+- Find the Dc-1 virtual machine's private IP address and copy it
 - Navigate to Client-1 VM -> Network Settings -> click on "Network Interface / IP configuration" box
 - On the left side of window, click on "DNS servers"
-- Under "DNS servers", select the "Custom" option and paste the DC-1 private IP address
+- Under "DNS servers", select the "Custom" option and paste the Dc-1 private IP address
 - Click "Save"
 - Find your way to "Virtual Machines" in Azure
 - Select "Client-1" 
