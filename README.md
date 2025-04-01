@@ -248,7 +248,8 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 <br />
 
 <h3>Join client-1 to your domain</h3> 
-- Login to Client-1 VM as the original local admin Ex- Username:"labuser"
+
+- Login to Client-1 VM as, the original local admin Ex: Username- labuser
 - In the Client-1 VM, right click Windows start button -> then click "System"
 - Click on "Rename this PC (advanced)" on the right side of window
 
@@ -260,7 +261,7 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 <br />
 
 - Under "Computer Name" tab, click Change
-- Check the cirlce infront of "Domain" , type "mydomain.com" in the text box, then click "Ok"
+- Check the cirlce infront of "Domain" , type mydomain.com in the text box, then click Ok
   
 ![image](https://github.com/user-attachments/assets/072469d8-6c81-42fc-99b9-67d558561f48)
 
@@ -269,9 +270,9 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 </p>
 <br />
 
-- A "Windows Security" window will show up
-- Fill in the username and password with "Jane Doe" info (Username: mydomain.com\jane_admin)
-- Press "Ok" and you will see the following window pop up
+- A Windows Security window will show up
+- Fill in the username and password with Jane Doe's info (Username: mydomain.com\jane_admin)
+- Press Ok , and you will see the following window pop up
 
 ![image](https://github.com/user-attachments/assets/eefe9e79-8642-40f3-9252-36b61231c75b)
 
@@ -281,7 +282,7 @@ Paste the public IP address into "Computer" field section of Remote Desktop and 
 </p>
 <br />
 
-- Click "Ok" and your virtual machine will restart
+- Click Ok, and your virtual machine will restart
 - In the Dc-1 VM, open "Active Directory Users and Computers" app
 - Extend "mydomain.com" -> then click on "Computers" to confirm that Client-1 is inside
 
