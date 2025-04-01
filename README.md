@@ -108,7 +108,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h3>Connect to Client VM with Remote Desktop</h3>
 
-- Retrieve and copy public IP address of Client-1 virtual machine
+- Find and copy public IP address of Client-1 virtual machine
 - Paste the public IP address into "Computer" field section of Remote Desktop and connect to the VM
 
 </p>
